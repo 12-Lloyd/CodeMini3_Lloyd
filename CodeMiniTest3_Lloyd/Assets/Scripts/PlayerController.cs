@@ -68,15 +68,12 @@ public class PlayerController : MonoBehaviour
             {
                 playerRb.AddForce(Vector3.up * 10, ForceMode.Impulse);
                 jumpCount++;
-                AnimController.SetBool("Jump", true);
-                AnimController.SetBool("JumpCheck", false);
+                AnimController.SetTrigger("Jump");
+               
             }
         }
     
-        if (Input.GetKeyUp(KeyCode.Space))
-        {
-            AnimController.SetBool("Jump", false);
-        }
+    
     }
     private void OnTriggerEnter(Collider other)
     {
